@@ -7,8 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  reelsIcon='../../../assets/img/reels.svg'
-  user='../../../assets/img/user.jpg'
 
   constructor() { }
 

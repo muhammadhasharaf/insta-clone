@@ -8,7 +8,7 @@ import { HomeFeed } from 'src/app/shared/models/feed';
 })
 export class PostComponent implements OnInit {
 
-  user = '../../../assets/img/user.jpg'
+
 
   @Input() data!: Partial<HomeFeed>
 
