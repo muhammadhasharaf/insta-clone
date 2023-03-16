@@ -1,0 +1,57 @@
+<div class="post">
+    <div class="post_header">
+        <div class="post_user">
+            <a href="/" class="post_user-img">
+                <img src="{{user}}" alt="">
+            </a>
+            <span class="post_user-name" *ngIf="data.author" [innerHTML]="data.author"></span>
+        </div>
+        <button class="post_header-btn">
+            <i class="ph ph-dots-three"></i>
+        </button>
+    </div>
+    <div class="post_img" *ngIf="data.urlToImage">
+        <img src="{{data.urlToImage}}" alt="post_image" />
+    </div>
+    <div class="post_footer">
+        <div class="post_footer-actions">
+            <div class="post_footer-wrap">
+                <button class="post_footer-btn">
+                    <i class="ph ph-heart"></i>
+                </button>
+                <button class="post_footer-btn">
+                    <i class="ph ph-chat-circle"></i>
+                </button>
+                <button class="post_footer-btn">
+                    <i class="ph ph-paper-plane-tilt"></i>
+                </button>
+            </div>
+            <button class="post_footer-btn">
+                <i class="ph ph-bookmark-simple"></i>
+            </button>
+        </div>
+        <div class="post_likes">
+            <div class="post_likes-recent">
+                <span class="post_likes-user">
+                    <img src="https://i.pravatar.cc/150?img=14" alt="user">
+                </span>
+                <span class="post_likes-user">
+                    <img src="https://i.pravatar.cc/150?img=23" alt="user">
+                </span>
+                <span class="post_likes-user">
+                    <img src="https://i.pravatar.cc/150?img=24" alt="user">
+                </span>
+            </div>
+            <span class="post_lkes-label">
+                Liked by <strong>mangaloly</strong> and <strong>25 others</strong>
+            </span>
+        </div>
+        <p class="post_desc">
+            <strong>{{!data.collapse? (data.title | slice:0:50) : data.title}}</strong><span *ngIf="data.collapse"> Self-care is self-awareness. Honor your needs. Take time for you. Spend time with people you love. Create healthy boundaries around what doesn’t feel safe. Express your needs. En-joy your life. Leave a YES to claim this. It’s time to step into your comfort zone and expand.</span>
+            <button class="post_desc-more" *ngIf="checkTitleLength()" (click)="data.collapse =! data.collapse"> &nbsp; more...</button>
+        </p>
+        <button class="post_comment">View all 8 comments</button>
+        <span class="post_time">{{data.publishedAt | timeAgo}}</span>
+    </div>
+</div>
+

@@ -1,0 +1,10 @@
+<ng-conatiner *ngFor="let feed of feedData">
+    <app-post [data]="feed"></app-post>
+</ng-conatiner>
+
+
+<ngx-spinner size="small" color="#fff" type="square-jelly-box" [fullScreen]="true">
+    <p style="color: white"> Loading... </p>
+</ngx-spinner>
+
+<div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollDisabled]="!hasLoadMore" [infiniteScrollThrottle]="50" (scrolled)="onScroll()"></div>
